@@ -1,4 +1,4 @@
-import "./SearchInputField.css";
+import "./SearchInputField.module.css";
 
 interface SearchInputFieldProps {
   placeholder: string;

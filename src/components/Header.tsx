@@ -1,5 +1,5 @@
 import Search from "./Search";
-import "./Header.css";
+import "./Header.module.css";
 
 function Header() {
   return (

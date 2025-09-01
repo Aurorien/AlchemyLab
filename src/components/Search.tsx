@@ -1,6 +1,6 @@
 import SearchInputField from "./SearchInputField";
 import SubmitButton from "./SubmitButton";
-import "./Search.css";
+import "./Search.module.css";
 
 function Search() {
   return (
