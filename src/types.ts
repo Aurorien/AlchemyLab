@@ -1,4 +1,25 @@
+export interface IIngredient {
+  ingredient: string | null;
+  measure: string | null;
+}
+
+export interface ICocktail {
+  id: string;
+  name: string;
+  tags: string[];
+  category: string;
+  alcoholic: boolean;
+  glass: string;
+  instructions: string;
+  thumbnail: string;
+  ingredients: IIngredient[];
+}
+
 export interface ICocktailApiResponse {
+  drinks: IApiCocktail[];
+}
+
+export interface IApiCocktail {
   idDrink: string;
   strDrink: string;
   strDrinkAlternate: string | null;
