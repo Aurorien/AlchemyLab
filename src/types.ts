@@ -1,3 +1,8 @@
+export interface ICocktailNameItem {
+  id: string;
+  name: string;
+}
+
 export interface IIngredient {
   ingredient: string | null;
   measure: string | null;
