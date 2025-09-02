@@ -1,17 +1,7 @@
 import CocktailCard from "@/components/CocktailCard";
-import { ICocktailApiResponse } from "@/types";
 import styles from "./page.module.css";
-import { mapRawCocktailData } from "@/mapRawCocktailData";
-
-async function fetchRandomCocktail() {
-  const response = await fetch(
-    "https://www.thecocktaildb.com/api/json/v1/1/random.php"
-  );
-
-  const randomCocktailResponse: ICocktailApiResponse = await response.json();
-
-  return randomCocktailResponse.drinks[0];
-}
+import { mapRawCocktailData } from "@/lib/mapRawCocktailData";
+import { fetchRandomCocktail } from "@/lib/api/fetchRandomCocktail";
 
 export default async function Page() {
   const rawRandomCocktail = await fetchRandomCocktail();

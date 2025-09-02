@@ -1,23 +1,13 @@
-import { ICocktail, ICocktailApiResponse } from "@/types";
 import Image from "next/image";
 import styles from "./page.module.css";
-import { extractIdFromSlug } from "@/utils/urlHelpers";
-import { mapRawCocktailData } from "@/mapRawCocktailData";
+import { extractIdFromSlug } from "@/lib/urlHelpers";
+import { mapRawCocktailData } from "@/lib/mapRawCocktailData";
+import { fetchCocktailById } from "@/lib/api/fetchCocktailById";
 
 interface PageProps {
   params: {
     slug: string;
   };
-}
-
-async function fetchCocktailById(id: string) {
-  const response = await fetch(
-    `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`
-  );
-
-  const randomCocktailResponse: ICocktailApiResponse = await response.json();
-
-  return randomCocktailResponse.drinks[0];
 }
 
 export default async function Page({ params }: PageProps) {

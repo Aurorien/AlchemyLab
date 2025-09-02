@@ -1,5 +1,5 @@
 import { ICocktail } from "@/types";
-import { createCocktailSlug } from "@/utils/urlHelpers";
+import { createCocktailSlug } from "@/lib/urlHelpers";
 import Image from "next/image";
 import Link from "next/link";
 
