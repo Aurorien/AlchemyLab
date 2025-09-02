@@ -1,15 +1,6 @@
-import { mapToNamesList } from "@/mapRawCocktailData";
-import { ICocktailApiResponse } from "@/types";
-
-async function fetchCocktailBySearchName(name: string) {
-  const response = await fetch(
-    `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${name}`
-  );
-
-  const cocktails: ICocktailApiResponse = await response.json();
-
-  return cocktails.drinks;
-}
+import CocktailListItem from "@/components/CocktailListItem";
+import { fetchCocktailBySearchName } from "@/lib/api/fetchCocktailBySearchName";
+import { mapToCocktailNamesList } from "@/lib/mapRawCocktailData";
 
 interface PageProps {
   searchParams: {
@@ -18,13 +9,27 @@ interface PageProps {
 }
 
 export default async function Page({ searchParams }: PageProps) {
-  const cocktails = await fetchCocktailBySearchName(searchParams.q ?? "");
-  const cocktailNameObjects = mapToNamesList(cocktails);
+  if (!searchParams.q) {
+    return (
+      <section>
+        <h2>No search results.</h2>
+        <p>Search for a cocktail by its name in the search field above.</p>
+      </section>
+    );
+  }
+
+  const cocktails = await fetchCocktailBySearchName(searchParams.q);
+  const cocktailNameObjects = mapToCocktailNamesList(cocktails);
   console.log("cocktailNameObjects", cocktailNameObjects);
 
   return (
-    <>
-      <ul></ul>
-    </>
+    <section>
+      <h2>Search results:</h2>
+      <ol>
+        {cocktailNameObjects.map((cocktail) => (
+          <CocktailListItem key={cocktail.id} cocktail={cocktail} />
+        ))}
+      </ol>
+    </section>
   );
 }
