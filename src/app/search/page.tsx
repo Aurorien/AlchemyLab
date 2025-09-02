@@ -1,5 +1,5 @@
-import { mapToNamesList } from '@/mapRawCocktailData';
-import { ICocktailApiResponse } from '@/types';
+import { mapToNamesList } from "@/mapRawCocktailData";
+import { ICocktailApiResponse } from "@/types";
 
 async function fetchCocktailBySearchName(name: string) {
   const response = await fetch(
@@ -18,9 +18,9 @@ interface PageProps {
 }
 
 export default async function Page({ searchParams }: PageProps) {
-  const cocktails = await fetchCocktailBySearchName(searchParams.q ?? '');
+  const cocktails = await fetchCocktailBySearchName(searchParams.q ?? "");
   const cocktailNameObjects = mapToNamesList(cocktails);
-  console.log('cocktailNameObjects', cocktailNameObjects);
+  console.log("cocktailNameObjects", cocktailNameObjects);
 
   return (
     <>
