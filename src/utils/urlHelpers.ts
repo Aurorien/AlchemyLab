@@ -1,5 +1,7 @@
-export function createCocktailSlug(cocktailId: string, cocktailName: string) {
-  return `/${cocktailId}-${cocktailName.toLowerCase().replace(/\s+/g, "-")}`;
+import { ICocktailNameItem } from "@/types";
+
+export function createCocktailSlug({ id, name }: ICocktailNameItem) {
+  return `/${id}-${name.toLowerCase().replace(/\s+/g, "-")}`;
 }
 
 export function extractIdFromSlug(slug: string): string {

@@ -8,7 +8,7 @@ interface CocktailCardProps {
 }
 
 export default function CocktailCard({ cocktail }: CocktailCardProps) {
-  const slug = createCocktailSlug(cocktail.id, cocktail.name);
+  const slug = createCocktailSlug({ id: cocktail.id, name: cocktail.name });
 
   return (
     <>
