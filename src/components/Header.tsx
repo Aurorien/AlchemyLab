@@ -1,9 +1,9 @@
 import Search from "./Search";
-import "./Header.module.css";
+import styles from "./Header.module.css";
 
 function Header() {
   return (
-    <header className="header">
+    <header className={styles.header}>
       <h1>Alchemy Lab</h1>
       <Search />
     </header>

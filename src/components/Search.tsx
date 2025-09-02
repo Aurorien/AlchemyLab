@@ -1,10 +1,10 @@
 import SearchInputField from "./SearchInputField";
 import SubmitButton from "./SubmitButton";
-import "./Search.module.css";
+import styles from "./Search.module.css";
 
 function Search() {
   return (
-    <form className="search">
+    <form className={styles.search}>
       <SearchInputField placeholder="Search cocktail by name..." />
       <SubmitButton text="Search" />
     </form>

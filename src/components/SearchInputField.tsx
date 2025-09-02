@@ -1,4 +1,4 @@
-import "./SearchInputField.module.css";
+import styles from "./SearchInputField.module.css";
 
 interface SearchInputFieldProps {
   placeholder: string;
@@ -10,7 +10,7 @@ function SearchInputField({ placeholder }: SearchInputFieldProps) {
       <input
         type="text"
         placeholder={placeholder}
-        className="search-input-field"
+        className={styles["search-input-field"]}
       />
     </>
   );
