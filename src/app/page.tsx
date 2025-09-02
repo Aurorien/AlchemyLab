@@ -1,10 +1,10 @@
-import Header from "@/components/Header";
+import Card from "@/components/Card";
 import styles from "./page.module.css";
 
 export default function Home() {
   return (
     <div className={styles.page}>
-      <Header />
+      <Card />
     </div>
   );
 }
