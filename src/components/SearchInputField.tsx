@@ -4,7 +4,9 @@ interface SearchInputFieldProps {
   placeholder: string;
 }
 
-function SearchInputField({ placeholder }: SearchInputFieldProps) {
+export default function SearchInputField({
+  placeholder,
+}: SearchInputFieldProps) {
   return (
     <>
       <input
@@ -15,5 +17,3 @@ function SearchInputField({ placeholder }: SearchInputFieldProps) {
     </>
   );
 }
-
-export default SearchInputField;
