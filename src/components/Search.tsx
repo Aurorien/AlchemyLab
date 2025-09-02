@@ -4,7 +4,7 @@ import styles from "./Search.module.css";
 
 export default function Search() {
   return (
-    <form className={styles.search}>
+    <form className={styles["search"]}>
       <SearchInputField placeholder="Search cocktail by name..." />
       <SubmitButton text="Search" />
     </form>

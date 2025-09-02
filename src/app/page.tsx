@@ -18,7 +18,7 @@ export default async function Page() {
   const randomCocktail = mapRawCocktailData(rawRandomCocktail);
 
   return (
-    <div className={styles.page}>
+    <div className={styles["page"]}>
       <CocktailCard cocktail={randomCocktail} />
     </div>
   );

@@ -50,7 +50,7 @@ export default async function Page({ params }: PageProps) {
         <section>
           <h3>Instructions</h3>
           <p>
-            Use a <span className={styles.glass}>{cocktail.glass}</span>.
+            Use a <span className={styles["glass"]}>{cocktail.glass}</span>.
           </p>
           <p>{cocktail.instructions}</p>
         </section>
