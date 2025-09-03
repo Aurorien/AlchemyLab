@@ -1,4 +1,4 @@
-import { IApiCocktail, ICocktail, ICocktailNameItem } from "../types";
+import { IApiCocktail, ICocktail, ICocktailNameObject } from "../types";
 
 export function mapRawCocktailData(rawCocktail: IApiCocktail): ICocktail {
   const ingredients = Array.from({ length: 15 }, (_, i) => {
@@ -24,7 +24,7 @@ export function mapRawCocktailData(rawCocktail: IApiCocktail): ICocktail {
 
 export function mapToCocktailNamesList(
   list: IApiCocktail[]
-): ICocktailNameItem[] {
+): ICocktailNameObject[] {
   return list.map((cocktail) => ({
     id: cocktail.idDrink,
     name: cocktail.strDrink,

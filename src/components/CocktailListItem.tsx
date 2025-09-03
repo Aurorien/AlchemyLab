@@ -1,9 +1,9 @@
-import { ICocktailNameItem } from "@/types";
+import { ICocktailNameObject } from "@/types";
 import { createCocktailSlug } from "@/lib/urlHelpers";
 import Link from "next/link";
 
 interface CocktailListItemProps {
-  cocktail: ICocktailNameItem;
+  cocktail: ICocktailNameObject;
 }
 
 export default function CocktailListItem({ cocktail }: CocktailListItemProps) {

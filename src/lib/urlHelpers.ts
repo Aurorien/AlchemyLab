@@ -1,6 +1,6 @@
-import { ICocktailNameItem } from "@/types";
+import { ICocktailNameObject } from "@/types";
 
-export function createCocktailSlug({ id, name }: ICocktailNameItem) {
+export function createCocktailSlug({ id, name }: ICocktailNameObject) {
   return `/${id}-${name.toLowerCase().replace(/\s+/g, "-")}`;
 }
 

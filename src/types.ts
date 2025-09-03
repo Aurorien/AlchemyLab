@@ -1,4 +1,4 @@
-export interface ICocktailNameItem {
+export interface ICocktailNameObject {
   id: string;
   name: string;
 }
