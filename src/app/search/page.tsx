@@ -1,4 +1,4 @@
-import CocktailListItem from "@/components/CocktailListItem";
+import SearchResultList from "@/components/SearchResultList";
 import { fetchCocktailBySearchName } from "@/lib/api/fetchCocktailBySearchName";
 import { mapToCocktailNamesList } from "@/lib/mapRawCocktailData";
 
@@ -25,11 +25,7 @@ export default async function Page({ searchParams }: PageProps) {
   return (
     <section>
       <h2>Search results:</h2>
-      <ol>
-        {cocktailNameObjects.map((cocktail) => (
-          <CocktailListItem key={cocktail.id} cocktail={cocktail} />
-        ))}
-      </ol>
+      <SearchResultList cocktailNames={cocktailNameObjects} />
     </section>
   );
 }
