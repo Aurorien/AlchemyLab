@@ -18,6 +18,7 @@ export default async function Page({ searchParams }: PageProps) {
     );
   }
 
+  // While this data loads, loading.tsx shows
   const cocktails = await fetchCocktailBySearchName(searchParams.q);
   const cocktailNameObjects = mapToCocktailNamesList(cocktails);
   console.log("cocktailNameObjects", cocktailNameObjects);
