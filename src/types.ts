@@ -20,6 +20,10 @@ export interface ICocktail {
   ingredients: IIngredient[];
 }
 
+export interface ICategory {
+  strCategory: string;
+}
+
 export interface IApiResponse<T> {
   drinks: T[];
 }

@@ -4,8 +4,14 @@ import SubmitButton from "./SubmitButton";
 import styles from "./Search.module.css";
 import { useSearchParams, useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
+import { CategoryDropdown } from "./CategoryDropdown";
+import { ICategory } from "@/types";
 
-export default function Search() {
+interface SearchProps {
+  categories: ICategory[];
+}
+
+export default function Search({ categories }: SearchProps) {
   const [query, setQuery] = useState("");
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -30,6 +36,7 @@ export default function Search() {
         value={query}
         onChange={setQuery}
       />
+      <CategoryDropdown categories={categories} />
       <SubmitButton text="Search" loadingText="Searching..." />
     </form>
   );
