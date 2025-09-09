@@ -18,6 +18,7 @@ export default function CocktailCard({ cocktail }: CocktailCardProps) {
           alt={cocktail.name}
           width={200}
           height={230}
+          priority={true}
         />
         <h2>{cocktail.name}</h2>
         <Link href={`/cocktail/${slug}`}>See more</Link>
