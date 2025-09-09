@@ -1,17 +1,16 @@
+"use client";
 import { Loader } from "lucide-react";
+import { useFormStatus } from "react-dom";
 
 interface SubmitButtonProps {
   text: string;
-  isLoading: boolean;
   loadingText: string;
 }
 
-export default function SubmitButton({
-  text,
-  isLoading,
-  loadingText,
-}: SubmitButtonProps) {
-  if (isLoading) {
+export default function SubmitButton({ text, loadingText }: SubmitButtonProps) {
+  const { pending } = useFormStatus();
+
+  if (pending) {
     return (
       <button type="submit" disabled>
         {loadingText} <Loader />
