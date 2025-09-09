@@ -8,6 +8,8 @@ interface PageProps {
   };
 }
 
+// loading.tsx shows while this page server-side data fetching and rendering happens
+
 export default async function Page({ searchParams }: PageProps) {
   if (!searchParams.q) {
     return (

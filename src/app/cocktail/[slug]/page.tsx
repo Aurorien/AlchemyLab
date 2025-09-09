@@ -10,6 +10,8 @@ interface PageProps {
   };
 }
 
+// loading.tsx shows while this page server-side data fetching and rendering happens
+
 export default async function Page({ params }: PageProps) {
   const id = extractIdFromSlug(params.slug);
 
