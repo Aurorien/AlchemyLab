@@ -5,16 +5,18 @@ import RandomCocktailDisplay from "@/components/RandomCocktailDisplay";
 import { fetchCocktailById } from "@/lib/api/fetchCocktailById";
 
 interface PageProps {
-  searchParams: {
+  searchParams: Promise<{
     cocktailId?: string;
-  };
+  }>;
 }
 
 export default async function Page({ searchParams }: PageProps) {
+  const cocktailId = (await searchParams).cocktailId;
   let rawCocktail;
 
-  if (searchParams.cocktailId) {
-    rawCocktail = await fetchCocktailById(searchParams.cocktailId);
+  // Go back to where user where at after clicking see more and then back, otherwise show new random
+  if (cocktailId) {
+    rawCocktail = await fetchCocktailById(cocktailId);
   } else {
     rawCocktail = await fetchRandomCocktail();
   }

@@ -5,15 +5,16 @@ import { mapRawCocktailData } from "@/lib/mapRawCocktailData";
 import { fetchCocktailById } from "@/lib/api/fetchCocktailById";
 
 interface PageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 // loading.tsx shows while this page server-side data fetching and rendering happens
 
 export default async function Page({ params }: PageProps) {
-  const id = extractIdFromSlug(params.slug);
+  const slug = (await params).slug;
+  const id = extractIdFromSlug(slug);
 
   const rawCocktail = await fetchCocktailById(id);
   const cocktail = mapRawCocktailData(rawCocktail);
