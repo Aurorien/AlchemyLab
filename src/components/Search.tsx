@@ -3,12 +3,13 @@ import SearchInputField from "./SearchInputField";
 import SubmitButton from "./SubmitButton";
 import styles from "./Search.module.css";
 import { useSearchParams, useRouter } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useTransition } from "react";
 
 export default function Search() {
   const [query, setQuery] = useState("");
   const router = useRouter();
   const searchParams = useSearchParams();
+  const [isPending, startTransition] = useTransition();
 
   useEffect(() => {
     const urlQuery = searchParams.get("q") || "";
@@ -19,9 +20,10 @@ export default function Search() {
     e.preventDefault();
     console.log("search query", query);
 
-    if (query.trim()) {
-      router.push(`/search?q=${encodeURIComponent(query.trim())}`);
-    }
+    if (query.trim())
+      startTransition(() => {
+        router.push(`/search?q=${encodeURIComponent(query.trim())}`);
+      });
   };
 
   return (
@@ -31,7 +33,11 @@ export default function Search() {
         value={query}
         onChange={setQuery}
       />
-      <SubmitButton text="Search" />
+      <SubmitButton
+        text="Search"
+        isLoading={isPending}
+        loadingText="Searching..."
+      />
     </form>
   );
 }
