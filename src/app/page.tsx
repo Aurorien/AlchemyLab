@@ -5,13 +5,13 @@ import RandomCocktailDisplay from "@/components/RandomCocktailDisplay";
 import { fetchCocktailById } from "@/lib/api/fetchCocktailById";
 import { handleGetRandom } from "./actions";
 
-interface PageProps {
+interface HomeProps {
   searchParams: Promise<{
     cocktailId?: string;
   }>;
 }
 
-export default async function Page({ searchParams }: PageProps) {
+export default async function Home({ searchParams }: HomeProps) {
   const cocktailId = (await searchParams).cocktailId;
   let rawCocktail;
 

@@ -20,7 +20,7 @@ export default function Search() {
     console.log("search query", query);
 
     if (query.trim())
-      router.push(`/search?q=${encodeURIComponent(query.trim())}`);
+      router.push(`/searchResults?q=${encodeURIComponent(query.trim())}`);
   };
 
   return (

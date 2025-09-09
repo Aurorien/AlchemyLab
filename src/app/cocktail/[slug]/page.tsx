@@ -4,7 +4,7 @@ import { extractIdFromSlug } from "@/lib/urlHelpers";
 import { mapRawCocktailData } from "@/lib/mapRawCocktailData";
 import { fetchCocktailById } from "@/lib/api/fetchCocktailById";
 
-interface PageProps {
+interface CocktailProps {
   params: Promise<{
     slug: string;
   }>;
@@ -12,7 +12,7 @@ interface PageProps {
 
 // loading.tsx shows while this page server-side data fetching and rendering happens
 
-export default async function Page({ params }: PageProps) {
+export default async function Cocktail({ params }: CocktailProps) {
   const slug = (await params).slug;
   const id = extractIdFromSlug(slug);
 

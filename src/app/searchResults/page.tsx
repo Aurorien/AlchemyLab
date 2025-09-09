@@ -3,7 +3,7 @@ import SearchResultList from "@/components/SearchResultList";
 import { fetchCocktailBySearchName } from "@/lib/api/fetchCocktailBySearchName";
 import { mapToCocktailNamesList } from "@/lib/mapRawCocktailData";
 
-interface PageProps {
+interface SearchResultsProps {
   searchParams: Promise<{
     q?: string;
   }>;
@@ -11,7 +11,9 @@ interface PageProps {
 
 // loading.tsx shows while this page server-side data fetching and rendering happens
 
-export default async function Page({ searchParams }: PageProps) {
+export default async function SearchResults({
+  searchParams,
+}: SearchResultsProps) {
   const searchQuery = (await searchParams).q;
   if (!searchQuery) {
     return <NoSearchResults />;
