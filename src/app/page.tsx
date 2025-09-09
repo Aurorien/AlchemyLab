@@ -3,6 +3,7 @@ import { mapRawCocktailData } from "@/lib/mapRawCocktailData";
 import { fetchRandomCocktail } from "@/lib/api/fetchRandomCocktail";
 import RandomCocktailDisplay from "@/components/RandomCocktailDisplay";
 import { fetchCocktailById } from "@/lib/api/fetchCocktailById";
+import { handleGetRandom } from "./actions";
 
 interface PageProps {
   searchParams: Promise<{
@@ -25,7 +26,10 @@ export default async function Page({ searchParams }: PageProps) {
 
   return (
     <div className={styles["page"]}>
-      <RandomCocktailDisplay initialCocktail={randomCocktail} />
+      <RandomCocktailDisplay
+        cocktail={randomCocktail}
+        onGetRandom={handleGetRandom} // Passes the server action
+      />
     </div>
   );
 }
