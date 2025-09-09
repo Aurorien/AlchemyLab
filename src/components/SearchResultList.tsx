@@ -4,8 +4,8 @@ import { PageSize } from "@/lib/constants";
 import { ICocktailNameObject } from "@/types";
 import { useState } from "react";
 import CocktailListItem from "./CocktailListItem";
-import { Loader } from "./Loader";
 import Pagination from "./Pagination";
+import { Loader } from "lucide-react";
 
 interface SearchResultListProps {
   cocktailNames: ICocktailNameObject[];

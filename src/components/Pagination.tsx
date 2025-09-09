@@ -1,7 +1,6 @@
 import type { ReactNode } from "react";
 import Button from "./Button";
-import { Loader } from "./Loader";
-import { CircleArrowLeft, CircleArrowRight } from "lucide-react";
+import { CircleArrowLeft, CircleArrowRight, Loader } from "lucide-react";
 
 interface PaginationProps {
   currentPage: number;
@@ -19,7 +18,7 @@ function Pagination({
   next,
 }: PaginationProps) {
   const renderPagination = (): ReactNode => {
-    if (loading) return <Loader small />;
+    if (loading) return <Loader />;
 
     return (
       <p>
