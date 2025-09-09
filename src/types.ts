@@ -20,8 +20,8 @@ export interface ICocktail {
   ingredients: IIngredient[];
 }
 
-export interface ICocktailApiResponse {
-  drinks: IApiCocktail[];
+export interface IApiResponse<T> {
+  drinks: T[];
 }
 
 export interface IApiCocktail {
