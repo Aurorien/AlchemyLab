@@ -1,8 +1,3 @@
-export interface ICocktailNameObject {
-  id: string;
-  name: string;
-}
-
 export interface IIngredient {
   ingredient: string | null;
   measure: string | null;
@@ -22,6 +17,21 @@ export interface ICocktail {
 
 export interface ICategory {
   strCategory: string;
+}
+
+export interface ICocktailNameObject {
+  strDrink: string;
+  idDrink: string;
+}
+
+export interface IFilterCocktail {
+  strDrink: string;
+  strDrinkThumb: string;
+  idDrink: string;
+}
+
+export interface INoDataMessage {
+  noDataMessage: string;
 }
 
 export interface IApiResponse<T> {

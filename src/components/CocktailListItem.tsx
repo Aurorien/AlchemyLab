@@ -7,12 +7,15 @@ interface CocktailListItemProps {
 }
 
 export default function CocktailListItem({ cocktail }: CocktailListItemProps) {
-  const slug = createCocktailSlug({ id: cocktail.id, name: cocktail.name });
+  const slug = createCocktailSlug({
+    idDrink: cocktail.idDrink,
+    strDrink: cocktail.strDrink,
+  });
 
   return (
     <>
       <li>
-        <Link href={`/cocktail/${slug}`}>{cocktail.name}</Link>
+        <Link href={`/cocktail/${slug}`}>{cocktail.strDrink}</Link>
       </li>
     </>
   );

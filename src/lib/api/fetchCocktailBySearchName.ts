@@ -2,7 +2,7 @@ import { IApiCocktail, IApiResponse } from "@/types";
 
 export async function fetchCocktailBySearchName(
   name: string
-): Promise<IApiCocktail[]> {
+): Promise<IApiCocktail[] | string> {
   const response = await fetch(
     `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${name}`
   );

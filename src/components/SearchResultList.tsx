@@ -1,22 +1,20 @@
 "use client";
 
 import { PageSize } from "@/lib/constants";
-import { ICocktailNameObject } from "@/types";
 import { useState } from "react";
 import CocktailListItem from "./CocktailListItem";
 import Pagination from "./Pagination";
 import { Loader } from "lucide-react";
+import { IFilterCocktail } from "@/types";
 
 interface SearchResultListProps {
-  cocktailNames: ICocktailNameObject[];
+  cocktails: IFilterCocktail[];
 }
 
-export default function SearchResultList({
-  cocktailNames,
-}: SearchResultListProps) {
+export default function SearchResultList({ cocktails }: SearchResultListProps) {
   const [page, setPage] = useState<number>(0);
-  const pageCount: number = Math.ceil(cocktailNames.length / PageSize);
-  const loading: boolean = cocktailNames.length === 0;
+  const pageCount: number = Math.ceil(cocktails.length / PageSize);
+  const loading: boolean = cocktails.length === 0;
 
   const handleOnNext = () =>
     setPage((previous) => Math.min(previous + 1, pageCount - 1));
@@ -29,13 +27,14 @@ export default function SearchResultList({
 
     const start = page * PageSize;
     const end = start + PageSize;
-    return cocktailNames
-      .map((c) => <CocktailListItem key={c.id} cocktail={c} />)
+    return cocktails
+      .map((c) => <CocktailListItem key={c.idDrink} cocktail={c} />)
       .slice(start, end);
   };
 
   return (
     <>
+      <h2>Search results:</h2>
       <ol>{renderCocktails()}</ol>
       <Pagination
         currentPage={page + 1}

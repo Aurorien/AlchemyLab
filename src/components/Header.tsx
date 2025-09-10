@@ -6,6 +6,7 @@ import { ICategory } from "@/types";
 
 export default async function Header() {
   const categories: ICategory[] = await fetchCategories();
+
   const categoryList: string[] = categories.map(
     (category) => category.strCategory
   );

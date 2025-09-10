@@ -1,11 +1,15 @@
 import NoSearchResults from "@/components/NoSearchResults";
 import SearchResultList from "@/components/SearchResultList";
 import { fetchCocktailBySearchName } from "@/lib/api/fetchCocktailBySearchName";
-import { mapToCocktailNamesList } from "@/lib/mapRawCocktailData";
+import { fetchCocktailByCategory } from "@/lib/api/fetchCocktailsByCategory";
+import { getFilteredCocktailResult } from "@/lib/getFilteredCocktailResult";
+import { mapToFilterList } from "@/lib/mapRawCocktailData";
+import { IApiCocktail, IFilterCocktail, INoDataMessage } from "@/types";
 
 interface SearchResultsProps {
   searchParams: Promise<{
-    q?: string;
+    name?: string;
+    category?: string;
   }>;
 }
 
@@ -14,23 +18,19 @@ interface SearchResultsProps {
 export default async function SearchResults({
   searchParams,
 }: SearchResultsProps) {
-  const searchQuery = (await searchParams).q;
-  if (!searchQuery) {
-    return <NoSearchResults />;
-  }
+  const { name, category } = await searchParams;
 
-  const cocktails = await fetchCocktailBySearchName(searchQuery);
-  if (!cocktails) {
-    return <NoSearchResults />;
-  }
+  const filteredCocktails = await getFilteredCocktailResult(name, category);
 
-  const cocktailNameObjects = mapToCocktailNamesList(cocktails);
-  console.log("cocktailNameObjects", cocktailNameObjects);
+  const renderSearchResult = () => {
+    if (
+      typeof filteredCocktails === "string" ||
+      !filteredCocktails ||
+      filteredCocktails.length === 0
+    )
+      return <NoSearchResults />;
+    return <SearchResultList cocktails={filteredCocktails} />;
+  };
 
-  return (
-    <section>
-      <h2>Search results:</h2>
-      <SearchResultList cocktailNames={cocktailNameObjects} />
-    </section>
-  );
+  return <section>{renderSearchResult()}</section>;
 }

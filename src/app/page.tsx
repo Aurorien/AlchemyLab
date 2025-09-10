@@ -33,3 +33,5 @@ export default async function Home({ searchParams }: HomeProps) {
     </div>
   );
 }
+
+// TODO : återexportera på lämpliga ställen, t.ex. i components
