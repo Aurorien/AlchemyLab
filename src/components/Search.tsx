@@ -1,4 +1,5 @@
 "use client";
+import { Dropdown } from "./Dropdown";
 import SearchInputField from "./SearchInputField";
 import SubmitButton from "./SubmitButton";
 import styles from "./Search.module.css";
@@ -36,8 +37,13 @@ export default function Search({ categories }: SearchProps) {
         value={query}
         onChange={setQuery}
       />
-      <CategoryDropdown categories={categories} />
-      <SubmitButton text="Search" loadingText="Searching..." />
+      <Dropdown
+        name="category"
+        items={categories}
+        value={formValues.category}
+        onChange={(value: string) => handleOnChange("category", value)}
+      />
+      <SubmitButton
     </form>
   );
 }
