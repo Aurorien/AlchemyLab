@@ -3,13 +3,9 @@ import { Dropdown } from "./Dropdown";
 import SearchInputField from "./SearchInputField";
 import SubmitButton from "./SubmitButton";
 import styles from "./Search.module.css";
-import { useSearchParams, useRouter } from "next/navigation";
-import { useState, useEffect } from "react";
-import { CategoryDropdown } from "./CategoryDropdown";
-import { ICategory } from "@/types";
 
 interface SearchProps {
-  categories: ICategory[];
+  categories: string[];
 }
 
 export default function Search({ categories }: SearchProps) {
