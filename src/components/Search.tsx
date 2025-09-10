@@ -43,22 +43,31 @@ export function Search({ categories }: SearchProps) {
 
   return (
     <form className={styles["search"]} onSubmit={handleSubmit}>
-      <SearchInputField
-        placeholder="Search cocktail by name..."
-        value={formValues.name}
-        onChange={(value: string) => handleOnChange("name", value)}
-      />
-      <Dropdown
-        name="category"
-        items={categories}
-        value={formValues.category}
-        onChange={(value: string) => handleOnChange("category", value)}
-      />
-      <SubmitButton
-        text="Search"
-        loadingText="Searching..."
-        disabled={!formHasAnyValue}
-      />
+      <fieldset>
+        <legend>Search for cocktail</legend>
+        <label>
+          Cocktail name
+          <SearchInputField
+            placeholder="Search cocktail by name..."
+            value={formValues.name}
+            onChange={(value: string) => handleOnChange("name", value)}
+          />
+        </label>
+        <label>
+          Category
+          <Dropdown
+            name="category"
+            items={categories}
+            value={formValues.category}
+            onChange={(value: string) => handleOnChange("category", value)}
+          />
+        </label>
+        <SubmitButton
+          text="Search"
+          loadingText="Searching..."
+          disabled={!formHasAnyValue}
+        />
+      </fieldset>
     </form>
   );
 }
