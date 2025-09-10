@@ -1,9 +1,10 @@
-import { ICocktailNameObject } from "@/types";
+import { IFilterCocktail } from "@/types";
 import { createCocktailSlug } from "@/lib/urlHelpers";
 import Link from "next/link";
+import Image from "next/image";
 
 interface CocktailListItemProps {
-  cocktail: ICocktailNameObject;
+  cocktail: IFilterCocktail;
 }
 
 export default function CocktailListItem({ cocktail }: CocktailListItemProps) {
@@ -15,7 +16,15 @@ export default function CocktailListItem({ cocktail }: CocktailListItemProps) {
   return (
     <>
       <li>
-        <Link href={`/cocktail/${slug}`}>{cocktail.strDrink}</Link>
+        <Link href={`/cocktail/${slug}`}>
+          <Image
+            src={cocktail.strDrinkThumb}
+            alt={cocktail.strDrink}
+            width={35}
+            height={41}
+          />
+          {cocktail.strDrink}
+        </Link>
       </li>
     </>
   );

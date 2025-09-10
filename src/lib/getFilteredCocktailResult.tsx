@@ -34,7 +34,7 @@ export async function getFilteredCocktailResult(
           return cocktailsByName;
         }
       );
-    // TODO : Add tumbnail images to list objects
+
     return filteredCocktailsByName;
   }
 }
