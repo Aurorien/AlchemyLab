@@ -5,9 +5,14 @@ import { useFormStatus } from "react-dom";
 interface SubmitButtonProps {
   text: string;
   loadingText: string;
+  disabled: boolean;
 }
 
-export default function SubmitButton({ text, loadingText }: SubmitButtonProps) {
+export default function SubmitButton({
+  text,
+  loadingText,
+  disabled = false,
+}: SubmitButtonProps) {
   const { pending } = useFormStatus();
 
   if (pending) {
@@ -18,5 +23,9 @@ export default function SubmitButton({ text, loadingText }: SubmitButtonProps) {
     );
   }
 
-  return <button type="submit">{text}</button>;
+  return (
+    <button type="submit" disabled={disabled}>
+      {text}
+    </button>
+  );
 }
