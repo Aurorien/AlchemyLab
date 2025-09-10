@@ -3,7 +3,7 @@ interface RandomCocktailButtonProps {
   onClick: () => void;
 }
 
-export default function RandomCocktailButton({
+export function RandomCocktailButton({
   isloading,
   onClick,
 }: RandomCocktailButtonProps) {

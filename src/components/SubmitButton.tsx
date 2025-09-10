@@ -8,7 +8,7 @@ interface SubmitButtonProps {
   disabled: boolean;
 }
 
-export default function SubmitButton({
+export function SubmitButton({
   text,
   loadingText,
   disabled = false,

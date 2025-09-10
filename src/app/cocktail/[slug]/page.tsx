@@ -1,8 +1,8 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import { extractIdFromSlug } from "@/lib/urlHelpers";
-import { mapRawCocktailData } from "@/lib/mapRawCocktailData";
-import { fetchCocktailById } from "@/lib/api/fetchCocktailById";
+import { extractIdFromSlug } from "@/lib";
+import { mapRawCocktailData } from "@/lib";
+import { fetchCocktailById } from "@/lib/api";
 
 interface CocktailProps {
   params: Promise<{

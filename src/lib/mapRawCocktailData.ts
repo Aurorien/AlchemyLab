@@ -1,4 +1,4 @@
-import { IApiCocktail, ICocktail, IFilterCocktail } from "../types";
+import { IApiCocktail, ICocktail, IFilterCocktail } from "@/types";
 
 export function mapRawCocktailData(rawCocktail: IApiCocktail): ICocktail {
   const ingredients = Array.from({ length: 15 }, (_, i) => {

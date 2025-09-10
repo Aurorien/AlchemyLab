@@ -1,4 +1,4 @@
-export default function NoSearchResults() {
+export function NoSearchResults() {
   return (
     <section>
       <h2>No search results.</h2>

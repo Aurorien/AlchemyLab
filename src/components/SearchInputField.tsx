@@ -6,7 +6,7 @@ interface SearchInputFieldProps {
   onChange: (value: string) => void;
 }
 
-export default function SearchInputField({
+export function SearchInputField({
   placeholder,
   value,
   onChange,

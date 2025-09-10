@@ -1,15 +1,14 @@
 "use client";
-
-import CocktailCard from "./CocktailCard";
-import { ICocktail } from "@/types";
-import RandomCocktailButton from "./RandomCocktailButton";
 import { useTransition } from "react";
+import { ICocktail } from "@/types";
+import { CocktailCard, RandomCocktailButton } from "@/components";
+
 interface RandomCocktailDisplayProps {
   cocktail: ICocktail;
   onGetRandom: () => Promise<void>;
 }
 
-export default function RandomCocktailDisplay({
+export function RandomCocktailDisplay({
   cocktail,
   onGetRandom,
 }: RandomCocktailDisplayProps) {

@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
-import Button from "./Button";
 import { CircleArrowLeft, CircleArrowRight, Loader } from "lucide-react";
+import { Button } from "@/components";
 
 interface PaginationProps {
   currentPage: number;
@@ -10,7 +10,7 @@ interface PaginationProps {
   next: () => void;
 }
 
-function Pagination({
+export function Pagination({
   currentPage,
   pageCount,
   loading,
@@ -44,5 +44,3 @@ function Pagination({
     </section>
   );
 }
-
-export default Pagination;

@@ -6,12 +6,14 @@ interface ButtonProps {
   onClick: () => void;
 }
 
-function Button({ children, disabled, onClick }: ButtonProps): ReactElement {
+export function Button({
+  children,
+  disabled,
+  onClick,
+}: ButtonProps): ReactElement {
   return (
     <button className="button" disabled={disabled} onClick={onClick}>
       {children}
     </button>
   );
 }
-
-export default Button;

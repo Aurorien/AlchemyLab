@@ -1,9 +1,8 @@
-import styles from "./page.module.css";
-import { mapRawCocktailData } from "@/lib/mapRawCocktailData";
-import { fetchRandomCocktail } from "@/lib/api/fetchRandomCocktail";
-import RandomCocktailDisplay from "@/components/RandomCocktailDisplay";
-import { fetchCocktailById } from "@/lib/api/fetchCocktailById";
+import { mapRawCocktailData } from "@/lib";
+import { fetchCocktailById, fetchRandomCocktail } from "@/lib/api";
 import { handleGetRandom } from "./actions";
+import { RandomCocktailDisplay } from "@/components";
+import styles from "./page.module.css";
 
 interface HomeProps {
   searchParams: Promise<{
@@ -33,5 +32,3 @@ export default async function Home({ searchParams }: HomeProps) {
     </div>
   );
 }
-
-// TODO : återexportera på lämpliga ställen, t.ex. i components

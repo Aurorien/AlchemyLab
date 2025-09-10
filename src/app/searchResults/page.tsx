@@ -1,10 +1,5 @@
-import NoSearchResults from "@/components/NoSearchResults";
-import SearchResultList from "@/components/SearchResultList";
-import { fetchCocktailBySearchName } from "@/lib/api/fetchCocktailBySearchName";
-import { fetchCocktailByCategory } from "@/lib/api/fetchCocktailsByCategory";
-import { getFilteredCocktailResult } from "@/lib/getFilteredCocktailResult";
-import { mapToFilterList } from "@/lib/mapRawCocktailData";
-import { IApiCocktail, IFilterCocktail, INoDataMessage } from "@/types";
+import { getFilteredCocktailResult } from "@/lib";
+import { NoSearchResults, SearchResultList } from "@/components";
 
 interface SearchResultsProps {
   searchParams: Promise<{

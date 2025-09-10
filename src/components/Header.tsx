@@ -1,10 +1,10 @@
-import Search from "./Search";
-import styles from "./Header.module.css";
 import Link from "next/link";
-import { fetchCategories } from "@/lib/api/fetchCategories";
 import { ICategory } from "@/types";
+import { fetchCategories } from "@/lib/api";
+import { Search } from "@/components";
+import styles from "./Header.module.css";
 
-export default async function Header() {
+export async function Header() {
   const categories: ICategory[] = await fetchCategories();
 
   const categoryList: string[] = categories.map(

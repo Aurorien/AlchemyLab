@@ -1,13 +1,13 @@
-import { ICocktail } from "@/types";
-import { createCocktailSlug } from "@/lib/urlHelpers";
 import Image from "next/image";
 import Link from "next/link";
+import { ICocktail } from "@/types";
+import { createCocktailSlug } from "@/lib";
 
 interface CocktailCardProps {
   cocktail: ICocktail;
 }
 
-export default function CocktailCard({ cocktail }: CocktailCardProps) {
+export function CocktailCard({ cocktail }: CocktailCardProps) {
   const slug = createCocktailSlug({
     idDrink: cocktail.id,
     strDrink: cocktail.name,

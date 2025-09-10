@@ -1,7 +1,7 @@
 "use server";
 
 import { redirect } from "next/navigation";
-import { fetchRandomCocktail } from "@/lib/api/fetchRandomCocktail";
+import { fetchRandomCocktail } from "@/lib/api";
 
 export async function handleGetRandom() {
   console.log("handleGetRandom RUNS");

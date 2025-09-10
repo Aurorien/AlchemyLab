@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { EB_Garamond, Cardo } from "next/font/google";
+import { Header } from "@/components";
 import "./globals.css";
-import Header from "@/components/Header";
 
 const ebGaramond = EB_Garamond({
   variable: "--font-eb-garamond",

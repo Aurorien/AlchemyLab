@@ -1,16 +1,14 @@
 "use client";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
-import { Dropdown } from "./Dropdown";
-import SearchInputField from "./SearchInputField";
-import SubmitButton from "./SubmitButton";
+import { SearchInputField, SubmitButton, Dropdown } from "@/components";
 import styles from "./Search.module.css";
 
 interface SearchProps {
   categories: string[];
 }
 
-export default function Search({ categories }: SearchProps) {
+export function Search({ categories }: SearchProps) {
   const searchParams = useSearchParams();
   const router = useRouter();
   const [formValues, setFormValues] = useState({

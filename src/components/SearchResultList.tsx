@@ -1,17 +1,15 @@
 "use client";
-
-import { PageSize } from "@/lib/constants";
 import { useState } from "react";
-import CocktailListItem from "./CocktailListItem";
-import Pagination from "./Pagination";
 import { Loader } from "lucide-react";
 import { IFilterCocktail } from "@/types";
+import { PageSize } from "@/lib";
+import { CocktailListItem, Pagination } from "@/components";
 
 interface SearchResultListProps {
   cocktails: IFilterCocktail[];
 }
 
-export default function SearchResultList({ cocktails }: SearchResultListProps) {
+export function SearchResultList({ cocktails }: SearchResultListProps) {
   const [page, setPage] = useState<number>(0);
   const pageCount: number = Math.ceil(cocktails.length / PageSize);
   const loading: boolean = cocktails.length === 0;
