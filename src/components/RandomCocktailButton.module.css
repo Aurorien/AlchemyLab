@@ -1,0 +1,10 @@
+.random-button {
+  margin-top: 0.3rem;
+  width: fit-content;
+  height: fit-content;
+  padding: 0.4rem 0.8rem 0.35rem 0.8rem;
+  align-self: center;
+  background-color: var(--button);
+  border-color: var(--button-border);
+  border-radius: 40%;
+}

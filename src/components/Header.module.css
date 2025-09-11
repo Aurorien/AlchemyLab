@@ -1,9 +1,18 @@
 .header {
   width: 100%;
+  height: 240px;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: var(--darker-background);
-  padding-bottom: 1.5rem;
+  padding-bottom: 1.4rem;
+  box-shadow: rgba(0, 0, 0, 0.304) 0px 5px 75px;
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    height: 173px;
+  }
 }

@@ -1,3 +1,5 @@
+import styles from "./RandomCocktailButton.module.css";
+
 interface RandomCocktailButtonProps {
   isloading: boolean;
   onClick: () => void;
@@ -8,7 +10,11 @@ export function RandomCocktailButton({
   onClick,
 }: RandomCocktailButtonProps) {
   return (
-    <button onClick={() => onClick()} disabled={isloading}>
+    <button
+      className={styles["random-button"]}
+      onClick={() => onClick()}
+      disabled={isloading}
+    >
       {isloading ? "Loading..." : "Show new random cocktail"}
     </button>
   );
