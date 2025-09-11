@@ -22,8 +22,8 @@ export function CocktailListItem({ cocktail }: CocktailListItemProps) {
           <Image
             src={cocktail.strDrinkThumb}
             alt={cocktail.strDrink}
-            width={25}
-            height={29}
+            width={20}
+            height={24}
           />
         </Link>
       </li>

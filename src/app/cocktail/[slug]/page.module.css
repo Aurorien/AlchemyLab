@@ -1,18 +1,9 @@
-.glass {
-  text-transform: lowercase;
-}
-
-.info {
-  font-size: 0.8rem;
-  font-style: italic;
-}
-
 .cocktail {
   position: relative;
   display: flex;
   justify-content: center;
   height: auto;
-  padding: 2rem;
+  padding-top: 4rem;
 }
 
 .cocktail-article {
@@ -23,6 +14,16 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  margin-top: 1rem;
+}
+
+.info {
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+.glass {
+  text-transform: lowercase;
 }
 
 @media screen and (min-width: 768px) {

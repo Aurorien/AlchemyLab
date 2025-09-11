@@ -27,7 +27,6 @@ export default async function Cocktail({ params }: CocktailProps) {
           alt={cocktail.name}
           width={200}
           height={230}
-          className={styles["cocktail-image"]}
         />
         <div className={styles["cocktail-text-wrapper"]}>
           <section>
