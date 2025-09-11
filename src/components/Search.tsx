@@ -64,7 +64,7 @@ export function Search({ categories }: SearchProps) {
         </label>
         <SubmitButton
           text="Search"
-          loadingText="Searching..."
+          loadingText="Searching"
           disabled={!formHasAnyValue}
         />
       </fieldset>

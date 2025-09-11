@@ -18,8 +18,8 @@ export function SubmitButton({
 
   if (pending) {
     return (
-      <button type="submit" disabled>
-        {loadingText} <Loader />
+      <button type="submit" className={styles["submit-button"]} disabled>
+        {loadingText} <Loader size={12} className={styles["spinning"]} />
       </button>
     );
   }

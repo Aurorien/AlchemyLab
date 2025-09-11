@@ -1,10 +1,22 @@
 .submit-button {
   margin-top: 0.3rem;
-  width: fit-content;
-  height: fit-content;
-  padding: 0.2rem 0.6rem 0.15rem 0.6rem;
+  width: 95px;
+  padding: 0.25rem 0.6rem;
   align-self: center;
   background-color: var(--button);
   border-color: var(--button-border);
   border-radius: 40%;
+}
+
+.spinning {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
