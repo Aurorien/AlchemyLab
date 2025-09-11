@@ -20,34 +20,39 @@ export default async function Cocktail({ params }: CocktailProps) {
   const cocktail = mapRawCocktailData(rawCocktail);
 
   return (
-    <>
-      <article>
+    <section className={styles["cocktail"]}>
+      <article className={styles["cocktail-article"]}>
         <Image
           src={cocktail.thumbnail}
           alt={cocktail.name}
           width={200}
           height={230}
+          className={styles["cocktail-image"]}
         />
-        <h2>{cocktail.name}</h2>
-        <p>{cocktail.category}</p>
-        <p>{cocktail.tags}</p>
-        <section>
-          <h3>Ingredients</h3>
-          {cocktail.ingredients.map((item, index) => (
-            <li key={`${item.ingredient}-${index}`}>
-              {item.measure}
-              <span>{item.ingredient}</span>
-            </li>
-          ))}
-        </section>
-        <section>
-          <h3>Instructions</h3>
-          <p>
-            Use a <span className={styles["glass"]}>{cocktail.glass}</span>.
-          </p>
-          <p>{cocktail.instructions}</p>
-        </section>
+        <div className={styles["cocktail-text-wrapper"]}>
+          <section>
+            <h2>{cocktail.name}</h2>
+            <p className={styles["info"]}>Category: {cocktail.category}</p>
+            <p className={styles["info"]}>Tags: {cocktail.tags}</p>
+          </section>
+          <section>
+            <h3>Ingredients</h3>
+            {cocktail.ingredients.map((item, index) => (
+              <li key={`${item.ingredient}-${index}`}>
+                {item.measure}
+                <span>{item.ingredient}</span>
+              </li>
+            ))}
+          </section>
+          <section className={styles["instructions"]}>
+            <h3>Instructions</h3>
+            <p>
+              Use a <span className={styles["glass"]}>{cocktail.glass}</span>.
+            </p>
+            <p>{cocktail.instructions}</p>
+          </section>
+        </div>
       </article>
-    </>
+    </section>
   );
 }

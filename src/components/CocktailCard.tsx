@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ICocktail } from "@/types";
 import { createCocktailSlug } from "@/lib";
 import styles from "./CocktailCard.module.css";
-import { ArrowRight, MoveRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 interface CocktailCardProps {
   cocktail: ICocktail;

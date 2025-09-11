@@ -1,3 +1,39 @@
 .glass {
   text-transform: lowercase;
 }
+
+.info {
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+.cocktail {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: auto;
+  padding: 2rem;
+}
+
+.cocktail-article {
+  width: 300px;
+}
+
+.cocktail-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .cocktail-article {
+    width: 600px;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 1rem;
+  }
+
+  .instructions {
+    padding-right: 3rem;
+  }
+}
