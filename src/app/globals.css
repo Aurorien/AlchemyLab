@@ -3,6 +3,11 @@
   --darker-background: #2e313e;
   --card-background: #70758f;
   --foreground: #bcd7ef;
+  --button: #13474f;
+  --button-border: #237468;
+  /* alternative button border colors: */
+  /* border-color: rgb(118, 106, 106); */
+  /* border-color: #416847; */
 }
 
 @media (prefers-color-scheme: light) {
@@ -41,6 +46,18 @@ h1 {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+fieldset {
+  border: none;
+}
+
+legend {
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
 }
 
 @media (prefers-color-scheme: dark) {

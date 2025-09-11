@@ -1,4 +1,5 @@
 import type { ReactElement, ReactNode } from "react";
+import styles from "./Button.module.css";
 
 interface ButtonProps {
   children: ReactNode;
@@ -12,7 +13,7 @@ export function Button({
   onClick,
 }: ButtonProps): ReactElement {
   return (
-    <button className="button" disabled={disabled} onClick={onClick}>
+    <button className={styles["button"]} disabled={disabled} onClick={onClick}>
       {children}
     </button>
   );

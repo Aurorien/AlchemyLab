@@ -43,7 +43,7 @@ export function Search({ categories }: SearchProps) {
 
   return (
     <form className={styles["search"]} onSubmit={handleSubmit}>
-      <fieldset>
+      <fieldset className={styles["search-fieldset"]}>
         <legend>Search for cocktail</legend>
         <label>
           Cocktail name

@@ -14,8 +14,11 @@ export function Dropdown({ name, items, value, onChange }: DropdownProps) {
       value={value}
       onChange={(e) => onChange(e.target.value)}
     >
-      <option defaultValue={""}> </option>
-
+      {!value ? (
+        <option value="" disabled>{`Choose a ${name}`}</option>
+      ) : (
+        <option value="">{`✕ Clear selection`}</option>
+      )}
       {items &&
         items.map((item, index) => (
           <option key={`${item}-${index}`} value={item}>
