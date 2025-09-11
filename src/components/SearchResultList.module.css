@@ -1,0 +1,6 @@
+.search-result-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-left: 2rem;
+}

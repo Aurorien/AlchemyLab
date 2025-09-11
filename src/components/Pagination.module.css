@@ -1,0 +1,9 @@
+.pagination {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0.5rem;
+}
+
+.pagination-page-numbers {
+  padding-top: 0.2rem;
+}

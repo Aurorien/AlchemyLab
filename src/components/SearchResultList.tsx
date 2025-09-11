@@ -4,6 +4,7 @@ import { Loader } from "lucide-react";
 import { IFilterCocktail } from "@/types";
 import { PageSize } from "@/lib";
 import { CocktailListItem, Pagination } from "@/components";
+import styles from "./SearchResultList.module.css";
 
 interface SearchResultListProps {
   cocktails: IFilterCocktail[];
@@ -30,10 +31,14 @@ export function SearchResultList({ cocktails }: SearchResultListProps) {
       .slice(start, end);
   };
 
+  const startNumber = page * PageSize + 1;
+
   return (
     <>
       <h2>Search results:</h2>
-      <ol>{renderCocktails()}</ol>
+      <ol start={startNumber} className={styles["search-result-list"]}>
+        {renderCocktails()}
+      </ol>
       <Pagination
         currentPage={page + 1}
         loading={loading}

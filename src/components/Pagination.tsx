@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { CircleArrowLeft, CircleArrowRight, Loader } from "lucide-react";
 import { Button } from "@/components";
+import styles from "./Pagination.module.css";
 
 interface PaginationProps {
   currentPage: number;
@@ -27,14 +28,16 @@ export function Pagination({
     );
   };
   return (
-    <section>
+    <section className={styles["pagination"]}>
       <Button
         disabled={currentPage === 1 ? true : undefined}
         onClick={previous}
       >
         <CircleArrowLeft />
       </Button>
-      <div>{renderPagination()}</div>
+      <div className={styles["pagination-page-numbers"]}>
+        {renderPagination()}
+      </div>
       <Button
         disabled={currentPage === pageCount ? true : undefined}
         onClick={next}

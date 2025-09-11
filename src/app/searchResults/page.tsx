@@ -1,5 +1,6 @@
 import { getFilteredCocktailResult } from "@/lib";
 import { NoSearchResults, SearchResultList } from "@/components";
+import styles from "./page.module.css";
 
 interface SearchResultsProps {
   searchParams: Promise<{
@@ -27,5 +28,9 @@ export default async function SearchResults({
     return <SearchResultList cocktails={filteredCocktails} />;
   };
 
-  return <section>{renderSearchResult()}</section>;
+  return (
+    <section className={styles["search-result-page"]}>
+      {renderSearchResult()}
+    </section>
+  );
 }
