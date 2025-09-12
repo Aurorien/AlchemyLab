@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ICocktail } from "@/types";
-import { createCocktailSlug } from "@/lib";
+import { createCocktailSlug } from "@/lib/urlHelpers";
 import styles from "./CocktailCard.module.css";
 import { ArrowRight } from "lucide-react";
 

@@ -1,4 +1,4 @@
-import { mapRawCocktailData } from "@/lib";
+import { mapRawCocktailData } from "@/lib/mappers";
 import { fetchCocktailById, fetchRandomCocktail } from "@/lib/api";
 import { handleGetRandom } from "./actions";
 import { RandomCocktailDisplay } from "@/components";

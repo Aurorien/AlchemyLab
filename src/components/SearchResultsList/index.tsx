@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { IFilterCocktail } from "@/types";
-import { PageSize } from "@/lib";
+import { PageSize } from "@/lib/constants";
 import { CocktailListItem, Pagination, SpinningLoader } from "@/components";
 import styles from "./SearchResultsList.module.css";
 

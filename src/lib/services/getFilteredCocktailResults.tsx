@@ -1,6 +1,6 @@
 import { IFilterCocktail, IApiCocktail } from "@/types";
 import { fetchCocktailBySearchName, fetchCocktailByCategory } from "@/lib/api";
-import { mapToFilterList } from "@/lib";
+import { mapToFilterList } from "@/lib/mappers";
 
 export async function getFilteredCocktailResults(
   name: string | undefined,

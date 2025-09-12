@@ -1,5 +1,5 @@
-import { getFilteredCocktailResults } from "@/lib";
 import { NoSearchResults, SearchResultsList } from "@/components";
+import { getFilteredCocktailResults } from "@/lib/services";
 import styles from "./page.module.css";
 
 interface SearchResultsProps {

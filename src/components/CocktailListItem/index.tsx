@@ -1,7 +1,7 @@
 import Link from "next/link";
 // import Image from "next/image";
 import { IFilterCocktail } from "@/types";
-import { createCocktailSlug } from "@/lib";
+import { createCocktailSlug } from "@/lib/urlHelpers";
 import styles from "./CocktailListItem.module.css";
 
 interface CocktailListItemProps {
