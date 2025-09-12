@@ -39,6 +39,8 @@
   }
 
   .cocktail-text-wrapper {
+    width: 350px;
+
     padding-right: 3rem;
   }
 }
