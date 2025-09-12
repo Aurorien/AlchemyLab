@@ -1,5 +1,5 @@
-import { getFilteredCocktailResult } from "@/lib";
-import { NoSearchResults, SearchResultList } from "@/components";
+import { getFilteredCocktailResults } from "@/lib";
+import { NoSearchResults, SearchResultsList } from "@/components";
 import styles from "./page.module.css";
 
 interface SearchResultsProps {
@@ -16,21 +16,19 @@ export default async function SearchResults({
 }: SearchResultsProps) {
   const { name, category } = await searchParams;
 
-  const filteredCocktails = await getFilteredCocktailResult(name, category);
+  const filteredCocktails = await getFilteredCocktailResults(name, category);
 
-  const renderSearchResult = () => {
+  const renderSearchResults = () => {
     if (
       typeof filteredCocktails === "string" ||
       !filteredCocktails ||
       filteredCocktails.length === 0
     )
       return <NoSearchResults />;
-    return <SearchResultList cocktails={filteredCocktails} />;
+    return <SearchResultsList cocktails={filteredCocktails} />;
   };
 
   return (
-    <section className={styles["search-result-page"]}>
-      {renderSearchResult()}
-    </section>
+    <div className={styles["search-results-page"]}>{renderSearchResults()}</div>
   );
 }

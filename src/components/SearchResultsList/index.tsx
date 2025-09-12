@@ -3,13 +3,13 @@ import { useState } from "react";
 import { IFilterCocktail } from "@/types";
 import { PageSize } from "@/lib";
 import { CocktailListItem, Pagination, SpinningLoader } from "@/components";
-import styles from "./SearchResultList.module.css";
+import styles from "./SearchResultsList.module.css";
 
-interface SearchResultListProps {
+interface SearchResultsListProps {
   cocktails: IFilterCocktail[];
 }
 
-export function SearchResultList({ cocktails }: SearchResultListProps) {
+export function SearchResultsList({ cocktails }: SearchResultsListProps) {
   const [page, setPage] = useState<number>(0);
   const pageCount: number = Math.ceil(cocktails.length / PageSize);
   const loading: boolean = cocktails.length === 0;
@@ -33,9 +33,9 @@ export function SearchResultList({ cocktails }: SearchResultListProps) {
   const startNumber = page * PageSize + 1;
 
   return (
-    <>
+    <section className={styles["search-results"]}>
       <h2>Search results:</h2>
-      <ol start={startNumber} className={styles["search-result-list"]}>
+      <ol start={startNumber} className={styles["search-results-list"]}>
         {renderCocktails()}
       </ol>
       <Pagination
@@ -45,6 +45,6 @@ export function SearchResultList({ cocktails }: SearchResultListProps) {
         pageCount={pageCount}
         previous={handleOnPrevious}
       />
-    </>
+    </section>
   );
 }

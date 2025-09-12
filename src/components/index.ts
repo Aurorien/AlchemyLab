@@ -9,7 +9,7 @@ export * from "./RandomCocktailButton";
 export * from "./RandomCocktailDisplay";
 export * from "./Search";
 export * from "./SearchInputField";
-export * from "./SearchResultList";
+export * from "./SearchResultsList";
 export * from "./SubmitButton";
 export * from "./Loading";
 export * from "./SpinningLoader";

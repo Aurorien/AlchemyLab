@@ -2,7 +2,7 @@ import { IFilterCocktail, IApiCocktail } from "@/types";
 import { fetchCocktailBySearchName, fetchCocktailByCategory } from "@/lib/api";
 import { mapToFilterList } from "@/lib";
 
-export async function getFilteredCocktailResult(
+export async function getFilteredCocktailResults(
   name: string | undefined,
   category: string | undefined
 ) {
