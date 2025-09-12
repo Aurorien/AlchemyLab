@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
-import { CircleArrowLeft, CircleArrowRight, Loader } from "lucide-react";
-import { Button } from "@/components";
+import { CircleArrowLeft, CircleArrowRight } from "lucide-react";
+import { Button, SpinningLoader } from "@/components";
 import styles from "./Pagination.module.css";
 
 interface PaginationProps {
@@ -19,7 +19,7 @@ export function Pagination({
   next,
 }: PaginationProps) {
   const renderPagination = (): ReactNode => {
-    if (loading) return <Loader />;
+    if (loading) return <SpinningLoader />;
 
     return (
       <p>

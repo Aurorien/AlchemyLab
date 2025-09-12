@@ -11,3 +11,4 @@ export * from "./Search";
 export * from "./SearchInputField";
 export * from "./SearchResultList";
 export * from "./SubmitButton";
+export * from "./SpinningLoader";

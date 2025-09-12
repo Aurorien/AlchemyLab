@@ -1,6 +1,6 @@
 "use client";
-import { Loader } from "lucide-react";
 import { useFormStatus } from "react-dom";
+import { SpinningLoader } from "@/components";
 import styles from "./SubmitButton.module.css";
 
 interface SubmitButtonProps {
@@ -19,7 +19,7 @@ export function SubmitButton({
   if (pending) {
     return (
       <button type="submit" className={styles["submit-button"]} disabled>
-        {loadingText} <Loader size={12} className={styles["spinning"]} />
+        {loadingText} <SpinningLoader />
       </button>
     );
   }

@@ -1,9 +1,8 @@
 "use client";
 import { useState } from "react";
-import { Loader } from "lucide-react";
 import { IFilterCocktail } from "@/types";
 import { PageSize } from "@/lib";
-import { CocktailListItem, Pagination } from "@/components";
+import { CocktailListItem, Pagination, SpinningLoader } from "@/components";
 import styles from "./SearchResultList.module.css";
 
 interface SearchResultListProps {
@@ -22,7 +21,7 @@ export function SearchResultList({ cocktails }: SearchResultListProps) {
     setPage((previous) => Math.max(previous - 1, 0));
 
   const renderCocktails = () => {
-    if (loading) return <Loader />;
+    if (loading) return <SpinningLoader />;
 
     const start = page * PageSize;
     const end = start + PageSize;

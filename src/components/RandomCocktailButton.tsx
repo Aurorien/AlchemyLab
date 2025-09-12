@@ -1,4 +1,4 @@
-import { Loader } from "lucide-react";
+import { SpinningLoader } from "@/components";
 import styles from "./RandomCocktailButton.module.css";
 
 interface RandomCocktailButtonProps {
@@ -13,14 +13,14 @@ export function RandomCocktailButton({
   if (isloading) {
     return (
       <button type="submit" className={styles["random-button"]} disabled>
-        Loading <Loader size={12} className={styles["spinning"]} />
+        Loading <SpinningLoader />
       </button>
     );
   }
   return (
     <button
       className={styles["random-button"]}
-      onClick={() => onClick()}
+      onClick={onClick}
       disabled={isloading}
     >
       Show new random cocktail
