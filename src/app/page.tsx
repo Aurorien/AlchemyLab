@@ -14,7 +14,7 @@ export default async function Home({ searchParams }: HomeProps) {
   const cocktailId = (await searchParams).cocktailId;
   let rawCocktail;
 
-  // Go back to where user where at after clicking see more and then back, otherwise show new random
+  // Go back to where user where at after clicking show more and then back, otherwise show new random
   if (cocktailId) {
     rawCocktail = await fetchCocktailById(cocktailId);
   } else {

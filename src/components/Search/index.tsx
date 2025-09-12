@@ -22,7 +22,6 @@ export function Search({ categories }: SearchProps) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("search query", formValues);
 
     let searchQuery: string = "";
 
