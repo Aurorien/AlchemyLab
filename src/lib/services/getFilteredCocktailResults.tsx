@@ -5,13 +5,14 @@ import { mapToFilterList } from "@/lib/mappers";
 export async function getFilteredCocktailResults(
   name: string | undefined,
   category: string | undefined
-) {
+): Promise<string | IFilterCocktail[]> {
   if (!name && !category) {
     return "No data found";
   }
 
   if (!name && category) {
-    const cocktailsByCategory = await fetchCocktailByCategory(category);
+    const cocktailsByCategory: IFilterCocktail[] | string =
+      await fetchCocktailByCategory(category);
     console.log("cocktailsByCategory", cocktailsByCategory);
     return cocktailsByCategory;
   }
@@ -36,4 +37,5 @@ export async function getFilteredCocktailResults(
 
     return filteredCocktailsByName;
   }
+  return "No data found";
 }

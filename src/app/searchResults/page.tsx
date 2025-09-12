@@ -19,11 +19,7 @@ export default async function SearchResults({
   const filteredCocktails = await getFilteredCocktailResults(name, category);
 
   const renderSearchResults = () => {
-    if (
-      typeof filteredCocktails === "string" ||
-      !filteredCocktails ||
-      filteredCocktails.length === 0
-    )
+    if (typeof filteredCocktails === "string" || filteredCocktails.length === 0)
       return <NoSearchResults />;
     return <SearchResultsList cocktails={filteredCocktails} />;
   };
