@@ -31,8 +31,12 @@ export default async function Cocktail({ params }: CocktailProps) {
         <div className={styles["cocktail-text-wrapper"]}>
           <section>
             <h2>{cocktail.name}</h2>
-            <p className={styles["info"]}>Category: {cocktail.category}</p>
-            <p className={styles["info"]}>Tags: {cocktail.tags}</p>
+            <p className={styles["info"]}>
+              Category: {cocktail.category ?? "No category"}
+            </p>
+            <p className={styles["info"]}>
+              Tags: {cocktail.tags.length ? cocktail.tags : "No tags"}
+            </p>
           </section>
           <section>
             <h3>Ingredients</h3>
