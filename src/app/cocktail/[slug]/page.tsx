@@ -60,7 +60,12 @@ export default async function Cocktail({ params }: CocktailProps) {
             <h3>Instructions</h3>
             <ol>
               {instructionsList.map((instruction, index) => (
-                <li key={`${instruction}-${index}`}>{instruction}.</li>
+                <li
+                  key={`${instruction}-${index}`}
+                  className={styles["instruction"]}
+                >
+                  {instruction}.
+                </li>
               ))}
             </ol>
           </section>

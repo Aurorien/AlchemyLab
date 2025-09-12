@@ -19,12 +19,16 @@
 }
 
 .info {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-style: italic;
 }
 
 .glass {
-  margin-top: 0.5rem;
+  margin-top: 0.6rem;
+}
+
+.instruction::first-letter {
+  text-transform: uppercase;
 }
 
 @media screen and (min-width: 768px) {

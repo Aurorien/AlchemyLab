@@ -46,7 +46,11 @@ h1 {
 
 h2,
 h3 {
-  padding-bottom: 0.2rem;
+  padding-bottom: 0.4rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
 }
 
 ol,
