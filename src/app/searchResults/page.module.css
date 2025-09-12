@@ -1,5 +1,11 @@
 .search-results-page {
   display: flex;
   flex-direction: column;
-  padding: 4rem 2rem;
+  padding: 2.1rem 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .search-results-page {
+    padding: 4rem 2rem;
+  }
 }

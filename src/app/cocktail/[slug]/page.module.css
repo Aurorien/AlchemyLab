@@ -14,7 +14,7 @@
 .cocktail-text-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.3rem;
   margin-top: 1rem;
 }
 

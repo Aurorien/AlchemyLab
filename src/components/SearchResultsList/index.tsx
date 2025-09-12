@@ -34,7 +34,7 @@ export function SearchResultsList({ cocktails }: SearchResultsListProps) {
 
   return (
     <section className={styles["search-results"]}>
-      <h2>Search results:</h2>
+      <h2 className={styles["search-results-h2"]}>Search results:</h2>
       <ol start={startNumber} className={styles["search-results-list"]}>
         {renderCocktails()}
       </ol>
