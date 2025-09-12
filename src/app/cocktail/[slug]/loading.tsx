@@ -1,13 +1,6 @@
-import { Loader } from "lucide-react";
+import { Loading } from "@/components";
 
 // Next.js will use this automatically while this folder page.tsx data is loading
-export default function Loading() {
-  console.log("Loading component rendered");
-
-  return (
-    <div>
-      <Loader />
-      <p>Loading...</p>
-    </div>
-  );
+export default function PageLoading() {
+  return <Loading />;
 }

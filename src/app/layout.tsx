@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { EB_Garamond, Cardo } from "next/font/google";
-import { Header } from "@/components";
+import { Header, Loading } from "@/components";
 import "./globals.css";
+import { Suspense } from "react";
 
 const ebGaramond = EB_Garamond({
   variable: "--font-eb-garamond",
@@ -30,8 +31,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${ebGaramond.variable} ${cardo.variable}`}>
-        <Header />
-        {children}
+        <Suspense fallback={<Loading />}>
+          <Header />
+          {children}
+        </Suspense>
       </body>
     </html>
   );
