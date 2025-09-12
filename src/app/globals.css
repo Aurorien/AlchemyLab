@@ -52,13 +52,20 @@ h3 {
   margin-bottom: 0.7rem;
 }
 
-li {
-  margin-bottom: 0.8rem;
-}
-
 ol,
 ul {
   padding-left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+ol {
+  gap: 0.8rem;
+}
+
+ul {
+  gap: 0.3rem;
 }
 
 a {

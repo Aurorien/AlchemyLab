@@ -14,7 +14,7 @@
 .cocktail-text-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 1.3rem;
+  gap: 1.2rem;
   margin-top: 1rem;
 }
 
@@ -24,7 +24,7 @@
 }
 
 .glass {
-  margin-top: 0.6rem;
+  margin-top: 1rem;
 }
 
 .instruction::first-letter {

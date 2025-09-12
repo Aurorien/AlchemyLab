@@ -1,16 +1,11 @@
 .search-results {
   display: flex;
   flex-direction: column;
-  gap: 0.1rem;
-}
-
-.search-results-h2 {
-  margin-bottom: 0.8rem;
+  gap: 1rem;
 }
 
 @media screen and (min-width: 768px) {
   .search-results {
     margin-left: 2rem;
-    gap: 0.2rem;
   }
 }
