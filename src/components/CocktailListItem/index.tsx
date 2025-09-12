@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+// import Image from "next/image";
 import { IFilterCocktail } from "@/types";
 import { createCocktailSlug } from "@/lib";
 import styles from "./CocktailListItem.module.css";
@@ -19,16 +19,16 @@ export function CocktailListItem({ cocktail }: CocktailListItemProps) {
       <li>
         <Link href={`/cocktail/${slug}`} className={styles["list-link"]}>
           {cocktail.strDrink}
-          <Image
+          {/* <Image
             src={cocktail.strDrinkThumb}
             alt={cocktail.strDrink}
             width={20}
             height={24}
-          />
+          /> */}
         </Link>
       </li>
     </>
   );
 }
 
-// TODO: Add image resize on hover
+// TODO: Add image and resize on hover
