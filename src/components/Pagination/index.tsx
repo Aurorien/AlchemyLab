@@ -32,8 +32,9 @@ export function Pagination({
       <Button
         disabled={currentPage === 1 ? true : undefined}
         onClick={previous}
+        aria-label="Go to previous page"
       >
-        <CircleArrowLeft />
+        <CircleArrowLeft aria-hidden="true" />
       </Button>
       <div className={styles["pagination-page-numbers"]}>
         {renderPagination()}
@@ -41,8 +42,9 @@ export function Pagination({
       <Button
         disabled={currentPage === pageCount ? true : undefined}
         onClick={next}
+        aria-label="Go to next page"
       >
-        <CircleArrowRight />
+        <CircleArrowRight aria-hidden="true" />
       </Button>
     </section>
   );

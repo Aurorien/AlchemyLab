@@ -21,7 +21,7 @@ export function CocktailListItem({ cocktail }: CocktailListItemProps) {
           {cocktail.strDrink}
           {/* <Image
             src={cocktail.strDrinkThumb}
-            alt={cocktail.strDrink}
+            alt={`Photo of ${cocktail.name} cocktail`}
             width={20}
             height={24}
           /> */}

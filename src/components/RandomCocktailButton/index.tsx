@@ -12,7 +12,7 @@ export function RandomCocktailButton({
 }: RandomCocktailButtonProps) {
   if (isloading) {
     return (
-      <button type="submit" className={styles["random-button"]} disabled>
+      <button className={styles["random-button"]} disabled aria-live="polite">
         Loading <SpinningLoader />
       </button>
     );

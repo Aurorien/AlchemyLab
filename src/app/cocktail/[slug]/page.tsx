@@ -29,7 +29,7 @@ export default async function Cocktail({ params }: CocktailProps) {
       <article className={styles["cocktail-article"]}>
         <Image
           src={cocktail.thumbnail}
-          alt={cocktail.name}
+          alt={`Photo of ${cocktail.name} cocktail`}
           width={200}
           height={230}
           priority={true}

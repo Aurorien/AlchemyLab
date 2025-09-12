@@ -20,15 +20,22 @@ export function CocktailCard({ cocktail }: CocktailCardProps) {
       <article className={styles["card"]}>
         <Image
           src={cocktail.thumbnail}
-          alt={cocktail.name}
+          alt={`Photo of a ${cocktail.name} cocktail`}
           width={200}
           height={230}
           priority={true}
         />
         <h2>{cocktail.name}</h2>
-        <Link href={`/cocktail/${slug}`}>
-          See more
-          <ArrowRight size={12} className={styles["see-more-arrow"]} />
+        <Link
+          href={`/cocktail/${slug}`}
+          aria-label={`Show ${cocktail.name} recipe`}
+        >
+          Show more
+          <ArrowRight
+            size={12}
+            className={styles["see-more-arrow"]}
+            aria-hidden="true"
+          />
         </Link>
       </article>
     </>

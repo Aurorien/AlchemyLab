@@ -18,7 +18,12 @@ export function SubmitButton({
 
   if (pending) {
     return (
-      <button type="submit" className={styles["submit-button"]} disabled>
+      <button
+        type="submit"
+        className={styles["submit-button"]}
+        disabled
+        aria-live="polite"
+      >
         {loadingText} <SpinningLoader />
       </button>
     );
