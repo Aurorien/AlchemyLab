@@ -1,4 +1,4 @@
 export * from "./constants";
-export * from "./getFilteredCocktailResult";
-export * from "./mapRawCocktailData";
+export * from "./services/getFilteredCocktailResult";
+export * from "./mappers/mapRawCocktailData";
 export * from "./urlHelpers";
