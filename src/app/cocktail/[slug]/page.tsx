@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import { extractIdFromSlug } from "@/lib/urlHelpers";
 import { fetchCocktailById } from "@/lib/api";
+import { sentenceArrayFromString } from "@/lib/utils";
 import { mapRawCocktailData } from "@/lib/mappers";
 
 interface CocktailProps {
@@ -18,6 +19,10 @@ export default async function Cocktail({ params }: CocktailProps) {
 
   const rawCocktail = await fetchCocktailById(id);
   const cocktail = mapRawCocktailData(rawCocktail);
+
+  const instructionsList = sentenceArrayFromString(cocktail.instructions);
+
+  console.log("instructionsList", instructionsList);
 
   return (
     <section className={styles["cocktail"]}>
@@ -41,19 +46,23 @@ export default async function Cocktail({ params }: CocktailProps) {
           </section>
           <section>
             <h3>Ingredients</h3>
-            {cocktail.ingredients.map((item, index) => (
-              <li key={`${item.ingredient}-${index}`}>
-                {item.measure}
-                <span> {item.ingredient}</span>
-              </li>
-            ))}
+            <ul>
+              {cocktail.ingredients.map((item, index) => (
+                <li key={`${item.ingredient}-${index}`}>
+                  {item.measure}
+                  <span> {item.ingredient}</span>
+                </li>
+              ))}
+            </ul>
+            <p className={styles["glass"]}>Glass: {cocktail.glass}</p>
           </section>
           <section>
             <h3>Instructions</h3>
-            <p>
-              Use a <span className={styles["glass"]}>{cocktail.glass}</span>.
-            </p>
-            <p>{cocktail.instructions}</p>
+            <ol>
+              {instructionsList.map((instruction, index) => (
+                <li key={`${instruction}-${index}`}>{instruction}.</li>
+              ))}
+            </ol>
           </section>
         </div>
       </article>

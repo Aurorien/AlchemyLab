@@ -24,7 +24,7 @@
 }
 
 .glass {
-  text-transform: lowercase;
+  margin-top: 0.5rem;
 }
 
 @media screen and (min-width: 768px) {
