@@ -34,7 +34,11 @@
     gap: 1rem;
   }
 
-  .instructions {
+  .cocktail-article > img {
+    margin-top: 1rem;
+  }
+
+  .cocktail-text-wrapper {
     padding-right: 3rem;
   }
 }

@@ -39,11 +39,11 @@ export default async function Cocktail({ params }: CocktailProps) {
             {cocktail.ingredients.map((item, index) => (
               <li key={`${item.ingredient}-${index}`}>
                 {item.measure}
-                <span>{item.ingredient}</span>
+                <span> {item.ingredient}</span>
               </li>
             ))}
           </section>
-          <section className={styles["instructions"]}>
+          <section>
             <h3>Instructions</h3>
             <p>
               Use a <span className={styles["glass"]}>{cocktail.glass}</span>.
