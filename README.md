@@ -1,2 +1,2 @@
 # Alchemy Lab   
-classic cocktails catalog
+classic cocktails catalogue
