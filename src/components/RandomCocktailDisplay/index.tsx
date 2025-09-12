@@ -15,10 +15,7 @@ export function RandomCocktailDisplay({
 }: RandomCocktailDisplayProps) {
   const [isPending, startTransition] = useTransition();
 
-  console.log("rendered RandomCocktailDisplay");
-
   const handleGenRandomCocktail = () => {
-    console.log("handleGenRandomCocktail RUNS");
     startTransition(() => {
       // Calls the action passed from parent
       onGetRandom();

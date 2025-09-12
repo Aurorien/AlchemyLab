@@ -13,7 +13,6 @@ export async function getFilteredCocktailResults(
   if (!name && category) {
     const cocktailsByCategory: IFilterCocktail[] | string =
       await fetchCocktailByCategory(category);
-    console.log("cocktailsByCategory", cocktailsByCategory);
     return cocktailsByCategory;
   }
 

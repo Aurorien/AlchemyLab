@@ -22,8 +22,6 @@ export default async function Cocktail({ params }: CocktailProps) {
 
   const instructionsList = sentenceArrayFromString(cocktail.instructions);
 
-  console.log("instructionsList", instructionsList);
-
   return (
     <section className={styles["cocktail"]}>
       <article className={styles["cocktail-article"]}>
