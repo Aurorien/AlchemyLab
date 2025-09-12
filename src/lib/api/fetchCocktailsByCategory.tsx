@@ -2,13 +2,18 @@ import { IApiResponse, IFilterCocktail } from "@/types";
 
 export async function fetchCocktailByCategory(
   category: string
-): Promise<IFilterCocktail[] | string> {
-  const response = await fetch(
-    `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${category}`
-  );
+): Promise<IFilterCocktail[] | string | null> {
+  try {
+    const response = await fetch(
+      `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${category}`
+    );
 
-  const cocktailsByCategoryResponse: IApiResponse<IFilterCocktail> =
-    await response.json();
+    const cocktailsByCategoryResponse: IApiResponse<IFilterCocktail> =
+      await response.json();
 
-  return cocktailsByCategoryResponse.drinks;
+    return cocktailsByCategoryResponse.drinks;
+  } catch (error) {
+    console.error("Error fetching cocktails by name:", error);
+    return null;
+  }
 }

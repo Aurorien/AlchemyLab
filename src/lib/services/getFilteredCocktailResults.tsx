@@ -11,15 +11,17 @@ export async function getFilteredCocktailResults(
   }
 
   if (!name && category) {
-    const cocktailsByCategory: IFilterCocktail[] | string =
+    const cocktailsByCategory: IFilterCocktail[] | string | null =
       await fetchCocktailByCategory(category);
+    if (!cocktailsByCategory) return "No data found";
     return cocktailsByCategory;
   }
 
   if (name) {
     const filteredCocktailsByName: IFilterCocktail[] | string =
       await fetchCocktailBySearchName(name).then(
-        (rawCocktails: IApiCocktail[] | string) => {
+        (rawCocktails: IApiCocktail[] | string | null) => {
+          if (!rawCocktails) return "No data found";
           if (typeof rawCocktails === "string") return rawCocktails;
           if (category) {
             const filtered = rawCocktails.filter(

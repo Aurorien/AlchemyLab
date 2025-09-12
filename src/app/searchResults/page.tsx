@@ -1,4 +1,4 @@
-import { NoSearchResults, SearchResultsList } from "@/components";
+import { NoData, SearchResultsList } from "@/components";
 import { getFilteredCocktailResults } from "@/lib/services";
 import styles from "./page.module.css";
 
@@ -20,7 +20,7 @@ export default async function SearchResults({
 
   const renderSearchResults = () => {
     if (typeof filteredCocktails === "string" || filteredCocktails.length === 0)
-      return <NoSearchResults />;
+      return <NoData title="No search results." />;
     return <SearchResultsList cocktails={filteredCocktails} />;
   };
 

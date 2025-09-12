@@ -1,7 +1,7 @@
 import { mapRawCocktailData } from "@/lib/mappers";
 import { fetchCocktailById, fetchRandomCocktail } from "@/lib/api";
 import { handleGetRandom } from "./actions";
-import { RandomCocktailDisplay } from "@/components";
+import { NoData, RandomCocktailDisplay } from "@/components";
 import styles from "./page.module.css";
 
 interface HomeProps {
@@ -19,6 +19,14 @@ export default async function Home({ searchParams }: HomeProps) {
     rawCocktail = await fetchCocktailById(cocktailId);
   } else {
     rawCocktail = await fetchRandomCocktail();
+  }
+
+  if (!rawCocktail) {
+    return (
+      <div className={styles["page"]}>
+        <NoData title="No random" />
+      </div>
+    );
   }
 
   const randomCocktail = mapRawCocktailData(rawCocktail);

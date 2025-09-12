@@ -16,6 +16,8 @@ export function Search({ categories }: SearchProps) {
     category: searchParams.get("category") ?? "",
   });
 
+  const hasCategories = !!categories.length;
+
   const handleOnChange = (key: string, value: string) => {
     setFormValues((prev) => ({ ...prev, [key]: value }));
   };
@@ -52,15 +54,17 @@ export function Search({ categories }: SearchProps) {
             onChange={(value: string) => handleOnChange("name", value)}
           />
         </label>
-        <label>
-          Category
-          <Dropdown
-            name="category"
-            items={categories}
-            value={formValues.category}
-            onChange={(value: string) => handleOnChange("category", value)}
-          />
-        </label>
+        {hasCategories && (
+          <label>
+            Category
+            <Dropdown
+              name="category"
+              items={categories}
+              value={formValues.category}
+              onChange={(value: string) => handleOnChange("category", value)}
+            />
+          </label>
+        )}
         <SubmitButton
           text="Search"
           loadingText="Searching"

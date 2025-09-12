@@ -1,9 +1,10 @@
 import Image from "next/image";
-import styles from "./page.module.css";
 import { extractIdFromSlug } from "@/lib/urlHelpers";
 import { fetchCocktailById } from "@/lib/api";
 import { sentenceArrayFromString } from "@/lib/utils";
 import { mapRawCocktailData } from "@/lib/mappers";
+import { NoData } from "@/components";
+import styles from "./page.module.css";
 
 interface CocktailProps {
   params: Promise<{
@@ -18,6 +19,7 @@ export default async function Cocktail({ params }: CocktailProps) {
   const id = extractIdFromSlug(slug);
 
   const rawCocktail = await fetchCocktailById(id);
+  if (!rawCocktail) return <NoData title="No data on cocktail." />;
   const cocktail = mapRawCocktailData(rawCocktail);
 
   const instructionsList = sentenceArrayFromString(cocktail.instructions);
