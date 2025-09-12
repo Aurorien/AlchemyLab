@@ -8,6 +8,7 @@
 
 .cocktail-article {
   width: 300px;
+  padding-bottom: 4rem;
 }
 
 .cocktail-text-wrapper {
@@ -40,7 +41,6 @@
 
   .cocktail-text-wrapper {
     width: 350px;
-
     padding-right: 3rem;
   }
 }
