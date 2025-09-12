@@ -7,5 +7,12 @@
 @media screen and (min-width: 768px) {
   .search-results {
     margin-left: 2rem;
+    width: 185px;
+    white-space: nowrap;
+    overflow: visible;
+  }
+
+  .search-results-list {
+    padding-left: 1.8rem;
   }
 }
